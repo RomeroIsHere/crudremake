@@ -17,14 +17,6 @@
                             href="{{ route('Menu') }}"
                             class="font-roboto flex items-center p-2 rounded-lg text-black hover:bg-accent hover:text-white group transition-all duration-300 ease-in-out"
                         >
-                            <span class="font-roboto ms-3"> Inicio </span>
-                        </a>
-                    </li>
-                    <li>
-                        <a
-                            href="{{ route('Menu') }}"
-                            class="font-roboto flex items-center p-2 rounded-lg text-black hover:bg-accent hover:text-white group transition-all duration-300 ease-in-out"
-                        >
                             <span class="font-roboto ms-3">
                                 Platillos
                             </span>
@@ -32,21 +24,11 @@
                     </li>
                     <li>
                         <a
-                            href="{{ route('Specials') }}"
+                            href="{{ route('Create') }}"
                             class="font-roboto flex items-center p-2 rounded-lg text-black hover:bg-accent hover:text-white group transition-all duration-300 ease-in-out"
                         >
                             <span class="font-roboto ms-3">
-                                Especialidades
-                            </span>
-                        </a>
-                    </li>
-                    <li>
-                        <a
-                            href="{{ route('Contact') }}"
-                            class="font-roboto flex items-center p-2 rounded-lg text-black hover:bg-accent hover:text-white group transition-all duration-300 ease-in-out"
-                        >
-                            <span class="font-roboto ms-3">
-                                Contactanos
+                                Crear platillo nuevo
                             </span>
                         </a>
                     </li>

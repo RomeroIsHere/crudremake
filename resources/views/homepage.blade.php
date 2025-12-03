@@ -75,27 +75,17 @@
                     class="font-roboto w-full lg:size-[50%] flex justify-center items-center self-center"
                 >
                     <a
-                        href="{{ route('Specials') }}"
+                        href="{{ route('Create') }}"
                         class="font-roboto w-full flex justify-center items-center"
                     >
                         <button
                             class="font-roboto h-10 w-[80%] lg:size-100 bg-accent text-black rounded-xl lg:text-6xl customShadow transition-all duration-300 ease-in-out"
                         >
-                            Especialidades
+                            Crea Platillo Nuevo
                         </button>
                     </a>
                 </div>
             </div>
-            <a
-                href="{{ route('Contact') }}"
-                class="font-roboto w-full flex justify-center items-center"
-            >
-                <button
-                    class="font-roboto h-10 w-[80%] lg:m-10 bg-secondary text-black rounded-xl customShadow transition-all duration-300 ease-in-out"
-                >
-                    Contactanos
-                </button>
-            </a>
         </div>
 @endsection
 @section('javascript')

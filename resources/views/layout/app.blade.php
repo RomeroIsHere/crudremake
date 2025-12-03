@@ -7,8 +7,7 @@
     <!-- // Source - https://stackoverflow.com/questions/63975930/laravel-access-css-and-js-file-from-resources-css-and-js-directory -->
     <!-- // Posted by Pashupati Sah -->
     <!-- // Retrieved 2025-11-05, License - CC BY-SA 4.0 -->
-    <link rel="stylesheet" href="{{asset(path: 'css/output.css')}}">
-
+    @vite('resources/css/app.css')
 </head>
 <body>
     @include('partial.sidebar')

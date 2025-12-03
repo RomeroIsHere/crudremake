@@ -2,11 +2,11 @@
     class="font-roboto h-25 px-10 bg-secondary flex flex-row justify-between text-black"
 >
     <a
-        href="{{ route('Homepage') }}"
+        href="{{ route('Menu') }}"
         class="font-roboto flex flex-row justify-start items-center"
     >
         <img
-            src="resources/Logo.svg"
+            src="{{url('/resources/Logo.svg')}}"
             alt="Logo de Space Shooting Star Burgers"
             class="font-roboto h-1/2"
         />
@@ -23,7 +23,7 @@
     >
         <span class="font-roboto sr-only">Open sidebar</span>
         <img
-            src="resources/Fries.svg"
+            src="{{url('resources/Fries.svg')}}"
             alt="Fries Menu"
             class="font-roboto max-h-1/2"
         />

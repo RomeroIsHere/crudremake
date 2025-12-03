@@ -11,7 +11,7 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('menu', function (Blueprint $table) {
+        Schema::create('plates', function (Blueprint $table) {
             $table->id();
             $table->string('name');
             $table->integer('price');//Price is Down to Peso only, no Cented Prices
@@ -27,6 +27,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('menu');
+        Schema::dropIfExists('plates');
     }
 };

@@ -1,6 +1,7 @@
 <?php
 use Illuminate\Support\Facades\Route;
 use App\http\controllers\MenuController;
+use App\http\controllers\PlateController;
 
 // Route::get('/', function () {
 //     return view('principal.welcome');
@@ -70,12 +71,23 @@ Route::get('/', function (){
 Route::get('/Menu', [MenuController::class,'index'])->name('Menu');
 // {{ route('Menu') }}
 
-Route::get('/Especialidades', function (){
-    return view('specials');
-})->name('Specials');
+
 // {{ route('Specials') }}
 
-Route::get('/Contacto', function (){
-    return view('contact');
-})->name('Contact');
-// {{ route('Contact') }}
+Route::get('/create', function (){
+    return view('create');
+})->name('Create');
+
+Route::get('/Success', function (){
+    return view('create')->with('success',true);
+})->name('Create.success');
+
+Route::get('/Failure', function (){
+    return view('create')->with('failure',true);
+})->name('Create.fail');
+
+// {{ route('Create') }}
+Route::post('/CreatePlate', [PlateController::class,'store'])->name('Plate.store');
+Route::post('/Update/{id}', [PlateController::class,'update'])->name('Plate.update');
+Route::post('/Delete/{id}', [PlateController::class,'delete'])->name('Plate.delete');
+Route::get('/View/{id}', [PlateController::class,'view'])->whereNumber('id')->name('Plate.view');

@@ -6,13 +6,13 @@
             >
                 <img
                     class="font-roboto size-5"
-                    src="resources/vegan-Circle.svg"
+                    src="{{url('/resources/vegan-Circle.svg')}}"
                     alt="Vegano"
                 />
                 Vegetariano
                 <img
                     class="font-roboto size-5"
-                    src="resources/gluten-Circle.svg"
+                    src="{{url('/resources/gluten-Circle.svg')}}"
                     alt="Gluten"
                 />
                 NO Contiene Gluten
