@@ -68,12 +68,13 @@ class PlateController extends Controller
         $plate->isVegan = $request->isVegan=='on'?true:false;
         $plate->hasGluten = $request->hasGluten=='on'?true:false;
         $plate->save();
-        return view('plateViewer',['plate'=>$plate]);
+        return view('plateViewer',['plate'=>$plate])->with('success',true);
     }
     public function delete(?string $id){
         
         $idNum = (int)$id;
         $plate = plate::findOrFail($idNum);
+        Storage::delete($plate->filepath);
         $plate->delete();
         return route('Menu');
     }

@@ -89,5 +89,5 @@ Route::get('/Failure', function (){
 // {{ route('Create') }}
 Route::post('/CreatePlate', [PlateController::class,'store'])->name('Plate.store');
 Route::post('/Update/{id}', [PlateController::class,'update'])->name('Plate.update');
-Route::post('/Delete/{id}', [PlateController::class,'delete'])->name('Plate.delete');
+Route::get('/Delete/{id}', [PlateController::class,'delete'])->name('Plate.delete');
 Route::get('/View/{id}', [PlateController::class,'view'])->whereNumber('id')->name('Plate.view');

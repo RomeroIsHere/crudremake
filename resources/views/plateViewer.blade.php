@@ -119,6 +119,16 @@
                     />
                     <br />
                 </form>
+                <div
+                    class="font-roboto TabContent grid grid-cols-1 md:grid-cols-2 bg-primary gap-5 p-5 border rounded-2xl"
+                >
+                <input
+                        class="font-roboto bg-accent col-span-full"
+                        type="button"
+                        onclick="ConfirmDeletion()"
+                        value="Borrar Platillo"
+                    />
+            </div>
             </div>
         </section>
 @endsection
@@ -139,5 +149,13 @@
     chooseFile.addEventListener("change", function () {
         getImgData();
     });
+
+    function ConfirmDeletion() {
+        let text = "Estas a Punto de Borrar el Platillo!\nEsta es una Accion no Revertible, Quieres Proceder?.";
+        if (confirm(text) == true) {
+            console.log("{{ route('Plate.delete',$plate['id']) }}");
+            window.location.replace("{{ route('Plate.delete',$plate['id']) }}");
+        }
+    }
 </script>
 @endsection
