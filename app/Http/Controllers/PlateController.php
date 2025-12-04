@@ -13,8 +13,16 @@ class PlateController extends Controller
         $request->validate([
             'file' => 'image|mimes:jpeg,jpg,png|max:2048',
         ]);
+        
+        $product = new Plate();
+
         $file = $request->file('file');
-        $path = $file->store('uploads', 'public');
+        $product->filepath=url('/resources/BasilBurger.jpg');
+        if($file){
+            $path = $file->store('uploads', 'public');
+            $product->filepath = $path;
+
+        }
     
         // $request->validate([
         //     'name' => 'required',
@@ -24,10 +32,8 @@ class PlateController extends Controller
 
         // $imageName = time().'.'.$request->image->extension();
         // $request->image->move(public_path('images'), $imageName);
-        $product = new Plate();
         $product->name = $request->name;
-        $product->price = $request->price;
-        $product->filepath = $path;
+        $product->price = ($request->price) > 0 ?$request->price : 0;
         $product->isVegan = $request->isVegan=='on'?true:false;
         $product->hasGluten = $request->hasGluten=='on'?true:false;
         // $product->description = $request->description;
@@ -76,7 +82,7 @@ class PlateController extends Controller
         $plate = plate::findOrFail($idNum);
         Storage::delete($plate->filepath);
         $plate->delete();
-        return route('Menu');
+        return view('Menu');
     }
 
 }
